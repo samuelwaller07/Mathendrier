@@ -265,6 +265,13 @@
         .item1:hover, .item2:hover, .item3:hover, .item4:hover, .item5:hover, .item6:hover, .item7:hover, .item8:hover, .item9:hover, .item10:hover, .item11:hover, .item12:hover, .item13:hover, .item14:hover, .item15:hover, .item16:hover, .item17:hover, .item18:hover, .item19:hover, .item20:hover, .item21:hover, .item22:hover, .item23:hover, .item24:hover, .item25:hover {
             transform: scale(1.03);
         }
+
+        /* Mise en page pour les petits écrans */
+        @media (max-width: 768px) {
+            .conteneur {
+                grid-template-columns: 1fr; /* 1 colonne pour les téléphones */
+            }
+        }
     </style>
 </head>
 <body>
