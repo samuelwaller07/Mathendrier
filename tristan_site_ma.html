@@ -1,0 +1,1524 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mathendrier Séries numériques</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%); /* Recentre en ajustant le décalage */
+            background-image: url(''); /* Chemin de l'image */
+            background-position: center; /* Centre l'image */
+            background-size: cover;
+            background-color: rgb(52, 52, 52);
+        }
+
+        /* Conteneur principal */
+        .conteneur {
+            display:flex;
+            display: grid;
+            grid-template-columns: repeat(7, 60px); 
+            grid-template-rows: repeat(7,60px);
+            gap: 5px;
+            padding: 5px;
+            border-radius: 10px;
+            background-color: rgb(255, 255, 255);
+        }
+
+        .grise {
+            color: gray;
+            opacity: 0.6;
+        }
+
+     
+
+        .item1 {
+            grid-column: 1/3;
+            grid-row: 1/2;
+            background-color: #2548a1;
+            color: white;
+            padding: 0px;
+            text-align: center;
+            border-radius: 5px;
+    
+        }
+
+        .item2 {
+            grid-column: 3/4;
+            grid-row: 1/3;
+            background-color: #254996;
+            color: white;
+            padding: 0px;
+            text-align: center;
+            border-radius: 5px;
+        }
+
+        .item3 {
+            grid-column: 4/5;
+            grid-row: 1/2;
+            background-color: #ffdb0e;
+            color: white;
+            padding: 0px;
+            text-align: center;
+            border-radius: 5px;
+        }
+
+        .item4 {
+            grid-column: 5/7;
+            grid-row: 1/3;
+            background-color:  #2548a1;
+            color: white;
+            padding: 0px;
+            text-align: center;
+            border-radius: 5px;
+        }
+        .item5 {
+            grid-column: 7/8;
+            grid-row: 1/3;
+            background-color:  #2548a1;
+            color: white;
+            padding: 0px;
+            text-align: center;
+            border-radius: 5px;
+        }
+        .item6 {
+            grid-column: 1/3;
+            grid-row: 2/4;
+            background-color:  #2548a1;
+            color: white;
+            padding: 0px;
+            text-align: center;
+            border-radius: 5px;
+        }
+        .item7 {
+            grid-column: 3/4;
+            grid-row: 3/4;
+            background-color: #be3737;
+            color: white;
+            padding: 0px;
+            text-align: center;
+            border-radius: 5px;
+        }
+
+        .item8 {
+            grid-column: 4/5;
+            grid-row: 2/4;
+            background-color: #30602e;
+            color: white;
+            padding: 0px;
+            text-align: center;
+            border-radius: 5px;
+        }
+
+        .item9 {
+            grid-column:5/6;
+            grid-row: 3/5;
+            background-color: #217233;
+            color: white;
+            padding: 0px;
+            text-align: center;
+            border-radius: 5px;
+        }
+
+        .item10 {
+            grid-column:6/8;
+            grid-row: 3/4;
+            background-color:  #2548a1;
+            color: white;
+            padding: 0px;
+            text-align: center;
+            border-radius: 5px;
+        }
+
+        .item11 {
+            grid-column:1/2;
+            grid-row: 4/6;
+            background-color:  #2548a1;
+            color: white;
+            padding: 0px;
+            text-align: center;
+            border-radius: 5px;
+        }
+
+        .item12 {
+            grid-column:2/4;
+            grid-row: 4/5;
+            background-color: #265a23;
+            color: white;
+            padding: 0px;
+            text-align: center;
+            border-radius: 5px;
+        }
+
+        .item13 {
+            grid-column:4/5;
+            grid-row: 5/6;
+            background-color: #31732c;
+            color: white;
+            padding: 0px;
+            text-align: center;
+            border-radius: 5px;
+        }
+
+        .item14 {
+            grid-column:4/5;
+            grid-row: 4/5;
+            background-color: #2c6125;
+            color: white;
+            padding: 0px;
+            text-align: center;
+            border-radius: 5px;
+        }
+
+        .item15 {
+            grid-column:6/7;
+            grid-row: 4/5;
+            background-color: #67deff;
+            color: white;
+            padding: 0px;
+            text-align: center;
+            border-radius: 5px;
+        }
+
+        .item16 {
+            grid-column:7/8;
+            grid-row: 4/6;
+            background-color:  #2548a1;
+            color: white;
+            padding: 0px;
+            text-align: center;
+            border-radius: 5px;
+        }
+
+        .item17 {
+            grid-column:2/3;
+            grid-row: 5/6;
+            background-color: #c77bd6;
+            color: white;
+            padding: 0px;
+            text-align: center;
+            border-radius: 5px;
+        }
+
+        .item18 {
+            grid-column:3/4;
+            grid-row: 5/7;
+            background-color: #276d33;
+            color: white;
+            padding: 0px;
+            text-align: center;
+            border-radius: 5px;
+        }
+
+        .item19 {
+            grid-column:5/8;
+            grid-row: 7/8;
+            background-color:  #2548a1;
+            color: white;
+            padding: 0px;
+            text-align: center;
+            border-radius: 5px;
+        }
+
+
+        .item20 {
+            grid-column:5/7;
+            grid-row: 5/6;
+            background-color: #255c2c;
+            color: white;
+            padding: 0px;
+            text-align: center;
+            border-radius: 5px;
+        }
+
+        .item21 {
+            grid-column:1/3;
+            grid-row: 6/7;
+            background-color: #2d5f26;
+            color: white;
+            padding: 0px;
+            text-align: center;
+            border-radius: 5px;
+        }
+
+        .item22 {
+            grid-column:4/5;
+            grid-row: 6/8;
+            background-color: #695439;
+            color: white;
+            padding: 0px;
+            text-align: center;
+            border-radius: 5px;
+        }
+
+        .item23 {
+            grid-column:1/4;
+            grid-row: 7/8;
+            background-color:  #2548a1;
+            color: white;
+            padding: 0px;
+            text-align: center;
+            border-radius: 5px;
+        }
+
+        .item24 {
+            grid-column:6/8;
+            grid-row: 6/7;
+            background-color: #244e1c;
+            color: white;
+            padding: 0px;
+            text-align: center;
+            border-radius: 5px;
+        }
+
+
+        .item25 {
+            grid-column:5/6;
+            grid-row: 6/7;
+            background-color: #ffa74e;
+            color: white;
+            padding: 0px;
+            text-align: center;
+            border-radius: 5px;
+        }
+
+        .item1:hover,
+        .item2:hover,
+        .item3:hover,
+        .item4:hover,
+        .item5:hover,
+        .item6:hover,
+        .item7:hover,
+        .item8:hover,
+        .item9:hover,
+        .item10:hover,
+        .item11:hover,
+        .item12:hover,
+        .item13:hover,
+        .item14:hover,
+        .item15:hover,
+        .item16:hover,
+        .item17:hover,
+        .item18:hover,
+        .item19:hover,
+        .item20:hover,
+        .item21:hover,
+        .item22:hover,
+        .item23:hover,
+        .item24:hover,
+        .item25:hover {
+            transform: scale(1.03);
+        }
+
+        /* Mise en page pour les petits écrans */
+        @media (max-width: 768px) {
+            .conteneur {
+                grid-template-columns: 1fr; /* 1 colonne pour les téléphones */
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="conteneur">
+        <div class="item1" id="i1" onclick="exo1()">1</div>
+        <div class="item2" id="i2" onclick="exo2()">2</div>
+        <div class="item3" id="i3" onclick="exo3()">3</div>
+        <div class="item4" id="i4" onclick="exo4()">4</div>
+        <div class="item5" id="i5" onclick="exo5()">5</div>
+        <div class="item6" id="i6" onclick="exo6()">6</div>
+        <div class="item7" id="i7" onclick="exo7()">7</div>
+        <div class="item8" id="i8" onclick="exo8()">8</div>
+        <div class="item9" id="i9" onclick="exo9()">9</div>
+        <div class="item10" id="i10" onclick="exo10()">10</div>
+        <div class="item11" id="i11" onclick="exo11()">11</div>
+        <div class="item12" id="i12" onclick="exo12()">12</div>
+        <div class="item13" id="i13" onclick="exo13()">13</div>
+        <div class="item14" id="i14" onclick="exo14()">14</div>
+        <div class="item15" id="i15" onclick="exo15()">15</div>
+        <div class="item16" id="i16" onclick="exo16()">16</div>
+        <div class="item17" id="i17" onclick="exo17()">17</div>
+        <div class="item18" id="i18" onclick="exo18()">18</div>
+        <div class="item19" id="i19" onclick="exo19()">19</div>
+        <div class="item20" id="i20" onclick="exo20()">20</div>
+        <div class="item21" id="i22" onclick="exo21()">21</div>
+        <div class="item22" id="i23" onclick="exo22()">22</div>
+        <div class="item23" id="i24" onclick="exo23()">23</div>
+        <div class="item24" id="i25" onclick="exo24()">24</div>
+        <div class="item25" id="i26" onclick="exo25()">25</div>
+    </div>
+    <script>   
+        function griserElements() {
+          const aujourdHui = new Date();
+          const mois = aujourdHui.getMonth() + 1; // Les mois commencent à 0
+          const jourActuel = aujourdHui.getDate();
+    
+          const tousLesElements = document.querySelectorAll("[id]");
+          tousLesElements.forEach(element => {
+            const idNumerique = parseInt(element.id.replace("i", ""), 10); // "replace" remplace ici "i" par "" et parseInt convertit en int
+            if ((mois===12 && !isNaN(idNumerique) && idNumerique > jourActuel) || (mois !== 12)) {
+              element.classList.add("grise");
+              element.removeAttribute("onclick");
+            }
+          });
+        }
+    
+        // Appeler la fonction au chargement de la page
+        griserElements();
+
+        // .....................................................
+        // EXERCICE 1
+        function exo1() {
+            const contenuHTML = `
+                <!DOCTYPE html>
+                <html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+                <head>
+                    <meta charset="UTF-8">
+                    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                    <title>Nouvelle Page</title>
+                    <style>
+                        body {
+                            margin: 0;
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                            flex-direction: column;
+                            height: 100vh;
+                            background-color: rgb(52, 52, 52);
+                            font-family: Arial, sans-serif;
+                        }
+                        .bloc {
+                            background-color: #2548a1;
+                            color: white;
+                            padding: 50px;
+                            border-radius: 10px;
+                            text-align: center;
+                            font-size: 1.5rem;
+                        }
+                    </style>
+                </head>
+                <body>
+                    <div class="bloc">
+                        <p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><munderover><mo>∑</mo><mrow><mi>n</mi><mo>=</mo><mn>0</mn></mrow><mrow><mi>+</mi><mi>∞</mi></mrow></munderover><msup><mrow><mo stretchy="true" form="prefix">(</mo><mfrac><mn>1</mn><mn>2</mn></mfrac><mo stretchy="true" form="postfix">)</mo></mrow><msqrt><mi>n</mi></msqrt></msup></mrow><annotation encoding="application/x-tex">\sum_{n=0}^{+\infty}(\frac{1}{2})^{\sqrt{n}}</annotation></semantics></math></p>
+                    </div>
+                    <button onclick="window.location.href='tristan_site_ma.html';">Retour à la page principale</button>
+                </body>
+                </html>
+            `;
+
+            // Remplacer le contenu de la page actuelle
+            document.open();
+            document.write(contenuHTML);
+            document.close();
+        }
+
+        // .....................................................
+        // EXERCICE 2
+        function exo2() {
+            const contenuHTML = `
+                <!DOCTYPE html>
+                <html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+                <head>
+                    <meta charset="UTF-8">
+                    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                    <title>Nouvelle Page</title>
+                    <style>
+                        body {
+                            margin: 0;
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                            flex-direction: column;
+                            height: 100vh;
+                            background-color: rgb(52, 52, 52);
+                            font-family: Arial, sans-serif;
+                        }
+                        .bloc {
+                            background-color: #2548a1;
+                            color: white;
+                            padding: 50px;
+                            border-radius: 10px;
+                            text-align: center;
+                            font-size: 1.5rem;
+                        }
+                    </style>
+                </head>
+                <body>
+                    <div class="bloc">
+                        <p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><munderover><mo>∑</mo><mrow><mi>n</mi><mo>=</mo><mn>0</mn></mrow><mrow><mi>+</mi><mi>∞</mi></mrow></munderover><msup><mfrac><mn>1</mn><msup><mrow><mo stretchy="true" form="prefix">(</mo><mn>2</mn><mi>n</mi><mo>+</mo><mn>1</mn><mo stretchy="true" form="postfix">)</mo></mrow><mn>2</mn></msup></mfrac><mo>*</mo></msup></mrow><annotation encoding="application/x-tex">\sum_{n=0}^{+\infty}\frac{1}{(2n+1)^2}^{\ast}</annotation></semantics></math></p>
+                    </div>
+                    <button onclick="window.location.href='tristan_site_ma.html';">Retour à la page principale</button>
+                </body>
+                </html>
+            `;
+
+            // Remplacer le contenu de la page actuelle
+            document.open();
+            document.write(contenuHTML);
+            document.close();
+        }
+
+        // .....................................................
+        // EXERCICE 3
+        function exo3() {
+            const contenuHTML = `
+                <!DOCTYPE html>
+                <html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+                <head>
+                    <meta charset="UTF-8">
+                    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                    <title>Nouvelle Page</title>
+                    <style>
+                        body {
+                            margin: 0;
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                            flex-direction: column;
+                            height: 100vh;
+                            background-color: rgb(52, 52, 52);
+                            font-family: Arial, sans-serif;
+                        }
+                        .bloc {
+                            background-color: #2548a1;
+                            color: white;
+                            padding: 50px;
+                            border-radius: 10px;
+                            text-align: center;
+                            font-size: 1.5rem;
+                        }
+                    </style>
+                </head>
+                <body>
+                    <div class="bloc">
+                        <p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><munderover><mo>∑</mo><mrow><mi>n</mi><mo>=</mo><mn>0</mn></mrow><mrow><mi>+</mi><mi>∞</mi></mrow></munderover><mfrac><msup><mrow><mo stretchy="true" form="prefix">(</mo><mi>n</mi><mi>!</mi><mo stretchy="true" form="postfix">)</mo></mrow><mn>3</mn></msup><mrow><mrow><mo stretchy="true" form="prefix">(</mo><mn>3</mn><mi>n</mi><mo stretchy="true" form="postfix">)</mo></mrow><mi>!</mi></mrow></mfrac></mrow><annotation encoding="application/x-tex">\sum_{n=0}^{+\infty}\frac{(n!)^3}{(3n)!}</annotation></semantics></math></p>
+                    </div>
+                    <button onclick="window.location.href='tristan_site_ma.html';">Retour à la page principale</button>
+                </body>
+                </html>
+            `;
+
+            // Remplacer le contenu de la page actuelle
+            document.open();
+            document.write(contenuHTML);
+            document.close();
+        }
+
+        // .....................................................
+        // EXERCICE 4
+        function exo4() {
+            const contenuHTML = `
+                <!DOCTYPE html>
+                <html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+                <head>
+                    <meta charset="UTF-8">
+                    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                    <title>Nouvelle Page</title>
+                    <style>
+                        body {
+                            margin: 0;
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                            flex-direction: column;
+                            height: 100vh;
+                            background-color: rgb(52, 52, 52);
+                            font-family: Arial, sans-serif;
+                        }
+                        .bloc {
+                            background-color: #2548a1;
+                            color: white;
+                            padding: 50px;
+                            border-radius: 10px;
+                            text-align: center;
+                            font-size: 1.5rem;
+                        }
+                    </style>
+                </head>
+                <body>
+                    <div class="bloc">
+                        <p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><munderover><mo>∑</mo><mrow><mi>n</mi><mo>=</mo><mn>1</mn></mrow><mrow><mi>+</mi><mi>∞</mi></mrow></munderover><msubsup><mi>p</mi><mi>n</mi><mrow><mi>−</mi><msub><mi>p</mi><mi>n</mi></msub></mrow></msubsup></mrow><annotation encoding="application/x-tex">\sum_{n=1}^{+\infty}p_n^{-p_n}</annotation></semantics></math></p>
+                    </div>
+                    <button onclick="window.location.href='tristan_site_ma.html';">Retour à la page principale</button>
+                </body>
+                </html>
+            `;
+
+            // Remplacer le contenu de la page actuelle
+            document.open();
+            document.write(contenuHTML);
+            document.close();
+        }
+
+        // .....................................................
+        // EXERCICE 5
+        function exo5() {
+            const contenuHTML = `
+                <!DOCTYPE html>
+                <html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+                <head>
+                    <meta charset="UTF-8">
+                    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                    <title>Nouvelle Page</title>
+                    <style>
+                        body {
+                            margin: 0;
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                            flex-direction: column;
+                            height: 100vh;
+                            background-color: rgb(52, 52, 52);
+                            font-family: Arial, sans-serif;
+                        }
+                        .bloc {
+                            background-color: #2548a1;
+                            color: white;
+                            padding: 50px;
+                            border-radius: 10px;
+                            text-align: center;
+                            font-size: 1.5rem;
+                        }
+                    </style>
+                </head>
+                <body>
+                    <div class="bloc">
+                        <p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><munderover><mo>∑</mo><mrow><mi>n</mi><mo>=</mo><mn>1</mn></mrow><mrow><mi>+</mi><mi>∞</mi></mrow></munderover><msup><mrow><mo stretchy="true" form="prefix">(</mo><mfrac><mn>1</mn><mi>n</mi></mfrac><mo stretchy="true" form="postfix">)</mo></mrow><mrow><mn>1</mn><mo>+</mo><mfrac><mn>1</mn><mi>n</mi></mfrac></mrow></msup></mrow><annotation encoding="application/x-tex">\sum_{n=1}^{+\infty}(\frac{1}{n})^{1+\frac{1}{n}}</annotation></semantics></math></p>
+                    </div>
+                    <button onclick="window.location.href='tristan_site_ma.html';">Retour à la page principale</button>
+                </body>
+                </html>
+            `;
+
+            // Remplacer le contenu de la page actuelle
+            document.open();
+            document.write(contenuHTML);
+            document.close();
+        }
+
+        // .....................................................
+        // EXERCICE 6
+        function exo6() {
+            const contenuHTML = `
+                <!DOCTYPE html>
+                <html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+                <head>
+                    <meta charset="UTF-8">
+                    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                    <title>Nouvelle Page</title>
+                    <style>
+                        body {
+                            margin: 0;
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                            flex-direction: column;
+                            height: 100vh;
+                            background-color: rgb(52, 52, 52);
+                            font-family: Arial, sans-serif;
+                        }
+                        .bloc {
+                            background-color: #2548a1;
+                            color: white;
+                            padding: 50px;
+                            border-radius: 10px;
+                            text-align: center;
+                            font-size: 1.5rem;
+                        }
+                    </style>
+                </head>
+                <body>
+                    <div class="bloc">
+                        <p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><munderover><mo>∑</mo><mrow><mi>n</mi><mo>=</mo><mn>1</mn></mrow><mrow><mi>+</mi><mi>∞</mi></mrow></munderover><msup><mfrac><msub><mi>p</mi><mi>n</mi></msub><mrow><mi>n</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>n</mi><mo>+</mo><mn>1</mn><mo stretchy="true" form="postfix">)</mo></mrow></mrow></mfrac><mo>*</mo></msup></mrow><annotation encoding="application/x-tex">\sum_{n=1}^{+\infty}\frac{p_n}{n(n+1)}^{\ast}</annotation></semantics></math></p>
+                    </div>
+                    <button onclick="window.location.href='tristan_site_ma.html';">Retour à la page principale</button>
+                </body>
+                </html>
+            `;
+
+            // Remplacer le contenu de la page actuelle
+            document.open();
+            document.write(contenuHTML);
+            document.close();
+        }
+
+        // .....................................................
+        // EXERCICE 7
+        function exo7() {
+            const contenuHTML = `
+                <!DOCTYPE html>
+                <html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+                <head>
+                    <meta charset="UTF-8">
+                    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                    <title>Nouvelle Page</title>
+                    <style>
+                        body {
+                            margin: 0;
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                            flex-direction: column;
+                            height: 100vh;
+                            background-color: rgb(52, 52, 52);
+                            font-family: Arial, sans-serif;
+                        }
+                        .bloc {
+                            background-color: #2548a1;
+                            color: white;
+                            padding: 50px;
+                            border-radius: 10px;
+                            text-align: center;
+                            font-size: 1.5rem;
+                        }
+                    </style>
+                </head>
+                <body>
+                    <div class="bloc">
+                        <p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><munderover><mo>∑</mo><mrow><mi>n</mi><mo>=</mo><mn>2</mn></mrow><mrow><mi>+</mi><mi>∞</mi></mrow></munderover><mfrac><msup><mi>n</mi><mrow><mo>ln</mo><mrow><mo stretchy="true" form="prefix">(</mo><mi>n</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow></msup><mrow><mo>ln</mo><msup><mrow><mo stretchy="true" form="prefix">(</mo><mi>n</mi><mo stretchy="true" form="postfix">)</mo></mrow><mi>n</mi></msup></mrow></mfrac></mrow><annotation encoding="application/x-tex">\sum_{n=2}^{+\infty}\frac{n^{\ln(n)}}{\ln(n)^n}</annotation></semantics></math></p>
+                    </div>
+                    <button onclick="window.location.href='tristan_site_ma.html';">Retour à la page principale</button>
+                </body>
+                </html>
+            `;
+
+            // Remplacer le contenu de la page actuelle
+            document.open();
+            document.write(contenuHTML);
+            document.close();
+        }
+
+        // .....................................................
+        // EXERCICE 8
+        function exo8() {
+            const contenuHTML = `
+                <!DOCTYPE html>
+                <html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+                <head>
+                    <meta charset="UTF-8">
+                    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                    <title>Nouvelle Page</title>
+                    <style>
+                        body {
+                            margin: 0;
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                            flex-direction: column;
+                            height: 100vh;
+                            background-color: rgb(52, 52, 52);
+                            font-family: Arial, sans-serif;
+                        }
+                        .bloc {
+                            background-color: #2548a1;
+                            color: white;
+                            padding: 50px;
+                            border-radius: 10px;
+                            text-align: center;
+                            font-size: 1.5rem;
+                        }
+                    </style>
+                </head>
+                <body>
+                    <div class="bloc">
+                        <p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><munderover><mo>∑</mo><mrow><mi>n</mi><mo>=</mo><mn>0</mn></mrow><mrow><mi>+</mi><mi>∞</mi></mrow></munderover><msup><mfrac><mn>1</mn><msup><mrow><mo stretchy="true" form="prefix">(</mo><mn>2</mn><mi>n</mi><mo>+</mo><mn>1</mn><mo stretchy="true" form="postfix">)</mo></mrow><mn>2</mn></msup></mfrac><mo>*</mo></msup></mrow><annotation encoding="application/x-tex">\sum_{n=0}^{+\infty}\frac{1}{(2n+1)^2}^{\ast}</annotation></semantics></math></p>
+                    </div>
+                    <button onclick="window.location.href='tristan_site_ma.html';">Retour à la page principale</button>
+                </body>
+                </html>
+            `;
+
+            // Remplacer le contenu de la page actuelle
+            document.open();
+            document.write(contenuHTML);
+            document.close();
+        }
+
+        // .....................................................
+        // EXERCICE 9
+        function exo9() {
+            const contenuHTML = `
+                <!DOCTYPE html>
+                <html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+                <head>
+                    <meta charset="UTF-8">
+                    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                    <title>Nouvelle Page</title>
+                    <style>
+                        body {
+                            margin: 0;
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                            flex-direction: column;
+                            height: 100vh;
+                            background-color: rgb(52, 52, 52);
+                            font-family: Arial, sans-serif;
+                        }
+                        .bloc {
+                            background-color: #2548a1;
+                            color: white;
+                            padding: 50px;
+                            border-radius: 10px;
+                            text-align: center;
+                            font-size: 1.5rem;
+                        }
+                    </style>
+                </head>
+                <body>
+                    <div class="bloc">
+                        <p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><munderover><mo>∑</mo><mrow><mi>n</mi><mo>=</mo><mn>1</mn></mrow><mrow><mi>+</mi><mi>∞</mi></mrow></munderover><mo>arctan</mo><msup><mrow><mo stretchy="true" form="prefix">(</mo><mfrac><mn>2</mn><msup><mi>n</mi><mn>2</mn></msup></mfrac><mo stretchy="true" form="postfix">)</mo></mrow><mo>*</mo></msup></mrow><annotation encoding="application/x-tex">\sum_{n=1}^{+\infty}\arctan(\frac{2}{n^2})^{\ast}</annotation></semantics></math></p>
+                    </div>
+                    <button onclick="window.location.href='tristan_site_ma.html';">Retour à la page principale</button>
+                </body>
+                </html>
+            `;
+
+            // Remplacer le contenu de la page actuelle
+            document.open();
+            document.write(contenuHTML);
+            document.close();
+        }
+
+        // .....................................................
+        // EXERCICE 10
+        function exo10() {
+            const contenuHTML = `
+                <!DOCTYPE html>
+                <html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+                <head>
+                    <meta charset="UTF-8">
+                    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                    <title>Nouvelle Page</title>
+                    <style>
+                        body {
+                            margin: 0;
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                            flex-direction: column;
+                            height: 100vh;
+                            background-color: rgb(52, 52, 52);
+                            font-family: Arial, sans-serif;
+                        }
+                        .bloc {
+                            background-color: #2548a1;
+                            color: white;
+                            padding: 50px;
+                            border-radius: 10px;
+                            text-align: center;
+                            font-size: 1.5rem;
+                        }
+                    </style>
+                </head>
+                <body>
+                    <div class="bloc">
+                        <p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><munderover><mo>∑</mo><mrow><mi>n</mi><mo>=</mo><mn>0</mn></mrow><mrow><mi>+</mi><mi>∞</mi></mrow></munderover><msup><mrow><mo stretchy="true" form="prefix">(</mo><mfrac><mrow><mi>n</mi><mo>+</mo><mn>1</mn></mrow><mrow><mn>3</mn><mi>n</mi><mo>+</mo><mn>1</mn></mrow></mfrac><mo stretchy="true" form="postfix">)</mo></mrow><mrow><mo>ln</mo><mrow><mo stretchy="true" form="prefix">(</mo><mi>n</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow></msup></mrow><annotation encoding="application/x-tex">\sum_{n=0}^{+\infty}(\frac{n+1}{3n+1})^{\ln(n)}</annotation></semantics></math></p>
+                    </div>
+                    <button onclick="window.location.href='tristan_site_ma.html';">Retour à la page principale</button>
+                </body>
+                </html>
+            `;
+
+            // Remplacer le contenu de la page actuelle
+            document.open();
+            document.write(contenuHTML);
+            document.close();
+        }
+
+        // .....................................................
+        // EXERCICE 11
+        function exo11() {
+            const contenuHTML = `
+                <!DOCTYPE html>
+                <html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+                <head>
+                    <meta charset="UTF-8">
+                    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                    <title>Nouvelle Page</title>
+                    <style>
+                        body {
+                            margin: 0;
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                            flex-direction: column;
+                            height: 100vh;
+                            background-color: rgb(52, 52, 52);
+                            font-family: Arial, sans-serif;
+                        }
+                        .bloc {
+                            background-color: #2548a1;
+                            color: white;
+                            padding: 50px;
+                            border-radius: 10px;
+                            text-align: center;
+                            font-size: 1.5rem;
+                        }
+                    </style>
+                </head>
+                <body>
+                    <div class="bloc">
+                        <p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><munderover><mo>∑</mo><mrow><mi>n</mi><mo>=</mo><mn>1</mn></mrow><mrow><mi>+</mi><mi>∞</mi></mrow></munderover><mfrac><msup><mrow><mo stretchy="true" form="prefix">(</mo><mi>−</mi><mn>1</mn><mo stretchy="true" form="postfix">)</mo></mrow><mrow><mo stretchy="false" form="prefix">⌊</mo><mo>ln</mo><mrow><mo stretchy="true" form="prefix">(</mo><mi>n</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo stretchy="false" form="postfix">⌋</mo></mrow></msup><mi>n</mi></mfrac></mrow><annotation encoding="application/x-tex">\sum_{n=1}^{+\infty}\frac{(-1)^{\lfloor \ln(n) \rfloor}}{n}</annotation></semantics></math></p>
+                    </div>
+                    <button onclick="window.location.href='tristan_site_ma.html';">Retour à la page principale</button>
+                </body>
+                </html>
+            `;
+
+            // Remplacer le contenu de la page actuelle
+            document.open();
+            document.write(contenuHTML);
+            document.close();
+        }
+
+        // .....................................................
+        // EXERCICE 12
+        function exo12() {
+            const contenuHTML = `
+                <!DOCTYPE html>
+                <html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+                <head>
+                    <meta charset="UTF-8">
+                    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                    <title>Nouvelle Page</title>
+                    <style>
+                        body {
+                            margin: 0;
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                            flex-direction: column;
+                            height: 100vh;
+                            background-color: rgb(52, 52, 52);
+                            font-family: Arial, sans-serif;
+                        }
+                        .bloc {
+                            background-color: #2548a1;
+                            color: white;
+                            padding: 50px;
+                            border-radius: 10px;
+                            text-align: center;
+                            font-size: 1.5rem;
+                        }
+                    </style>
+                </head>
+                <body>
+                    <div class="bloc">
+                        <p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><munderover><mo>∑</mo><mrow><mi>n</mi><mo>=</mo><mn>2</mn></mrow><mrow><mi>+</mi><mi>∞</mi></mrow></munderover><mfrac><mn>1</mn><mrow><mo>ln</mo><msup><mrow><mo stretchy="true" form="prefix">(</mo><mi>n</mi><mo stretchy="true" form="postfix">)</mo></mrow><mrow><mo>ln</mo><mrow><mo stretchy="true" form="prefix">(</mo><mi>n</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow></msup></mrow></mfrac></mrow><annotation encoding="application/x-tex">\sum_{n=2}^{+\infty}\frac{1}{\ln(n)^{\ln(n)}}</annotation></semantics></math></p>
+                    </div>
+                    <button onclick="window.location.href='tristan_site_ma.html';">Retour à la page principale</button>
+                </body>
+                </html>
+            `;
+
+            // Remplacer le contenu de la page actuelle
+            document.open();
+            document.write(contenuHTML);
+            document.close();
+        }
+
+        // .....................................................
+        // EXERCICE 13
+        function exo13() {
+            const contenuHTML = `
+                <!DOCTYPE html>
+                <html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+                <head>
+                    <meta charset="UTF-8">
+                    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                    <title>Nouvelle Page</title>
+                    <style>
+                        body {
+                            margin: 0;
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                            flex-direction: column;
+                            height: 100vh;
+                            background-color: rgb(52, 52, 52);
+                            font-family: Arial, sans-serif;
+                        }
+                        .bloc {
+                            background-color: #2548a1;
+                            color: white;
+                            padding: 50px;
+                            border-radius: 10px;
+                            text-align: center;
+                            font-size: 1.5rem;
+                        }
+                    </style>
+                </head>
+                <body>
+                    <div class="bloc">
+                        <p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><munderover><mo>∑</mo><mrow><mi>n</mi><mo>=</mo><mn>1</mn></mrow><mrow><mi>+</mi><mi>∞</mi></mrow></munderover><msup><mfrac><mn>1</mn><mrow><munderover><mo>∑</mo><mrow><mi>k</mi><mo>=</mo><mn>0</mn></mrow><mi>n</mi></munderover><msup><mi>k</mi><mn>2</mn></msup></mrow></mfrac><mo>*</mo></msup></mrow><annotation encoding="application/x-tex">\sum_{n=1}^{+\infty}\frac{1}{\sum_{k=0}^{n}k^2}^{\ast}</annotation></semantics></math></p>
+                    </div>
+                    <button onclick="window.location.href='tristan_site_ma.html';">Retour à la page principale</button>
+                </body>
+                </html>
+            `;
+
+            // Remplacer le contenu de la page actuelle
+            document.open();
+            document.write(contenuHTML);
+            document.close();
+        }
+
+        // .....................................................
+        // EXERCICE 14
+        function exo14() {
+            const contenuHTML = `
+                <!DOCTYPE html>
+                <html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+                <head>
+                    <meta charset="UTF-8">
+                    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                    <title>Nouvelle Page</title>
+                    <style>
+                        body {
+                            margin: 0;
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                            flex-direction: column;
+                            height: 100vh;
+                            background-color: rgb(52, 52, 52);
+                            font-family: Arial, sans-serif;
+                        }
+                        .bloc {
+                            background-color: #2548a1;
+                            color: white;
+                            padding: 50px;
+                            border-radius: 10px;
+                            text-align: center;
+                            font-size: 1.5rem;
+                        }
+                    </style>
+                </head>
+                <body>
+                    <div class="bloc">
+                        <p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><munderover><mo>∑</mo><mrow><mi>n</mi><mo>=</mo><mn>0</mn></mrow><mrow><mi>+</mi><mi>∞</mi></mrow></munderover><mfrac><mrow><mi>n</mi><mi>!</mi><msup><mo>tan</mo><mi>n</mi></msup><mrow><mo stretchy="true" form="prefix">(</mo><mi>θ</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><msup><mi>n</mi><mi>n</mi></msup></mfrac></mrow><annotation encoding="application/x-tex">\sum_{n=0}^{+\infty}\frac{n!\tan^n(\theta)}{n^n}</annotation></semantics></math></p>
+                    </div>
+                    <button onclick="window.location.href='tristan_site_ma.html';">Retour à la page principale</button>
+                </body>
+                </html>
+            `;
+
+            // Remplacer le contenu de la page actuelle
+            document.open();
+            document.write(contenuHTML);
+            document.close();
+        }
+
+        // .....................................................
+        // EXERCICE 15
+        function exo15() {
+            const contenuHTML = `
+                <!DOCTYPE html>
+                <html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+                <head>
+                    <meta charset="UTF-8">
+                    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                    <title>Nouvelle Page</title>
+                    <style>
+                        body {
+                            margin: 0;
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                            flex-direction: column;
+                            height: 100vh;
+                            background-color: rgb(52, 52, 52);
+                            font-family: Arial, sans-serif;
+                        }
+                        .bloc {
+                            background-color: #2548a1;
+                            color: white;
+                            padding: 50px;
+                            border-radius: 10px;
+                            text-align: center;
+                            font-size: 1.5rem;
+                        }
+                    </style>
+                </head>
+                <body>
+                    <div class="bloc">
+                        <p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><munderover><mo>∑</mo><mrow><mi>n</mi><mo>=</mo><mn>1</mn></mrow><mrow><mi>+</mi><mi>∞</mi></mrow></munderover><mfrac><mrow><mo>tan</mo><mrow><mo stretchy="true" form="prefix">(</mo><mfrac><mi>π</mi><mn>2</mn></mfrac><mo>−</mo><mfrac><mn>1</mn><msup><mi>e</mi><mi>n</mi></msup></mfrac><mo stretchy="true" form="postfix">)</mo></mrow><munderover><mo>∑</mo><mrow><mi>k</mi><mo>=</mo><mn>1</mn></mrow><mi>n</mi></munderover><mi>k</mi><mi>!</mi></mrow><msup><mn>2</mn><msup><mn>2</mn><mrow><mo>ln</mo><mrow><mo stretchy="true" form="prefix">(</mo><mi>n</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow></msup></msup></mfrac></mrow><annotation encoding="application/x-tex">\sum_{n=1}^{+\infty}\frac{\tan(\frac{\pi}{2}-\frac{1}{e^n})\sum_{k=1}^{n}k!}{2^{2^{\ln(n)}}}</annotation></semantics></math></p>
+                    </div>
+                    <button onclick="window.location.href='tristan_site_ma.html';">Retour à la page principale</button>
+                </body>
+                </html>
+            `;
+
+            // Remplacer le contenu de la page actuelle
+            document.open();
+            document.write(contenuHTML);
+            document.close();
+        }
+
+        // .....................................................
+        // EXERCICE 16
+        function exo16() {
+            const contenuHTML = `
+                <!DOCTYPE html>
+                <html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+                <head>
+                    <meta charset="UTF-8">
+                    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                    <title>Nouvelle Page</title>
+                    <style>
+                        body {
+                            margin: 0;
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                            flex-direction: column;
+                            height: 100vh;
+                            background-color: rgb(52, 52, 52);
+                            font-family: Arial, sans-serif;
+                        }
+                        .bloc {
+                            background-color: #2548a1;
+                            color: white;
+                            padding: 50px;
+                            border-radius: 10px;
+                            text-align: center;
+                            font-size: 1.5rem;
+                        }
+                    </style>
+                </head>
+                <body>
+                    <div class="bloc">
+                        <p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><munderover><mo>∑</mo><mrow><mi>n</mi><mo>=</mo><mn>3</mn></mrow><mrow><mi>+</mi><mi>∞</mi></mrow></munderover><mfrac><mn>1</mn><mrow><mi>n</mi><mo>ln</mo><mrow><mo stretchy="true" form="prefix">(</mo><mi>n</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>ln</mo><mrow><mo stretchy="true" form="prefix">(</mo><mo>ln</mo><mrow><mo stretchy="true" form="prefix">(</mo><mi>n</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo stretchy="true" form="postfix">)</mo></mrow></mrow></mfrac></mrow><annotation encoding="application/x-tex">\sum_{n=3}^{+\infty}\frac{1}{n\ln(n)\ln(\ln(n))}</annotation></semantics></math></p>
+                    </div>
+                    <button onclick="window.location.href='tristan_site_ma.html';">Retour à la page principale</button>
+                </body>
+                </html>
+            `;
+
+            // Remplacer le contenu de la page actuelle
+            document.open();
+            document.write(contenuHTML);
+            document.close();
+        }
+
+        // .....................................................
+        // EXERCICE 17
+        function exo17() {
+            const contenuHTML = `
+                <!DOCTYPE html>
+                <html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+                <head>
+                    <meta charset="UTF-8">
+                    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                    <title>Nouvelle Page</title>
+                    <style>
+                        body {
+                            margin: 0;
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                            flex-direction: column;
+                            height: 100vh;
+                            background-color: rgb(52, 52, 52);
+                            font-family: Arial, sans-serif;
+                        }
+                        .bloc {
+                            background-color: #2548a1;
+                            color: white;
+                            padding: 50px;
+                            border-radius: 10px;
+                            text-align: center;
+                            font-size: 1.5rem;
+                        }
+                    </style>
+                </head>
+                <body>
+                    <div class="bloc">
+                        <p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><munderover><mo>∑</mo><mrow><mi>n</mi><mo>=</mo><mn>2</mn></mrow><mrow><mi>+</mi><mi>∞</mi></mrow></munderover><mfrac><msup><mrow><mo stretchy="true" form="prefix">(</mo><mi>−</mi><mn>1</mn><mo stretchy="true" form="postfix">)</mo></mrow><mi>n</mi></msup><mrow><msup><mrow><mo stretchy="true" form="prefix">(</mo><mi>−</mi><mn>1</mn><mo stretchy="true" form="postfix">)</mo></mrow><mi>n</mi></msup><mo>+</mo><msqrt><mi>n</mi></msqrt></mrow></mfrac></mrow><annotation encoding="application/x-tex">\sum_{n=2}^{+\infty}\frac{(-1)^n}{(-1)^n +\sqrt{n}}</annotation></semantics></math></p>
+                    </div>
+                    <button onclick="window.location.href='tristan_site_ma.html';">Retour à la page principale</button>
+                </body>
+                </html>
+            `;
+
+            // Remplacer le contenu de la page actuelle
+            document.open();
+            document.write(contenuHTML);
+            document.close();
+        }
+
+        // .....................................................
+        // EXERCICE 18
+        function exo18() {
+            const contenuHTML = `
+                <!DOCTYPE html>
+                <html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+                <head>
+                    <meta charset="UTF-8">
+                    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                    <title>Nouvelle Page</title>
+                    <style>
+                        body {
+                            margin: 0;
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                            flex-direction: column;
+                            height: 100vh;
+                            background-color: rgb(52, 52, 52);
+                            font-family: Arial, sans-serif;
+                        }
+                        .bloc {
+                            background-color: #2548a1;
+                            color: white;
+                            padding: 50px;
+                            border-radius: 10px;
+                            text-align: center;
+                            font-size: 1.5rem;
+                        }
+                    </style>
+                </head>
+                <body>
+                    <div class="bloc">
+                        <p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><munderover><mo>∑</mo><mrow><mi>n</mi><mo>=</mo><mn>1</mn></mrow><mrow><mi>+</mi><mi>∞</mi></mrow></munderover><mi>f</mi><mrow><mo stretchy="true" form="prefix">(</mo><mfrac><mn>1</mn><msup><mi>n</mi><mi>α</mi></msup></mfrac><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">\sum_{n=1}^{+\infty}f(\frac{1}{n^\alpha})</annotation></semantics></math></p>
+                    </div>
+                    <button onclick="window.location.href='tristan_site_ma.html';">Retour à la page principale</button>
+                </body>
+                </html>
+            `;
+
+            // Remplacer le contenu de la page actuelle
+            document.open();
+            document.write(contenuHTML);
+            document.close();
+        }
+
+        // .....................................................
+        // EXERCICE 19
+        function exo19() {
+            const contenuHTML = `
+                <!DOCTYPE html>
+                <html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+                <head>
+                    <meta charset="UTF-8">
+                    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                    <title>Nouvelle Page</title>
+                    <style>
+                        body {
+                            margin: 0;
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                            flex-direction: column;
+                            height: 100vh;
+                            background-color: rgb(52, 52, 52);
+                            font-family: Arial, sans-serif;
+                        }
+                        .bloc {
+                            background-color: #2548a1;
+                            color: white;
+                            padding: 50px;
+                            border-radius: 10px;
+                            text-align: center;
+                            font-size: 1.5rem;
+                        }
+                    </style>
+                </head>
+                <body>
+                    <div class="bloc">
+                        <p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><munderover><mo>∑</mo><mrow><mi>n</mi><mo>=</mo><mn>1</mn></mrow><mrow><mi>+</mi><mi>∞</mi></mrow></munderover><mfrac><msup><mrow><mo stretchy="true" form="prefix">(</mo><mi>−</mi><mn>1</mn><mo stretchy="true" form="postfix">)</mo></mrow><mi>n</mi></msup><msup><mrow><mo stretchy="true" form="prefix">(</mo><mi>n</mi><mi>!</mi><mo stretchy="true" form="postfix">)</mo></mrow><mfrac><mn>1</mn><mi>n</mi></mfrac></msup></mfrac></mrow><annotation encoding="application/x-tex">\sum_{n=1}^{+\infty}\frac{(-1)^n}{(n!)^\frac{1}{n}}</annotation></semantics></math></p>
+                    </div>
+                    <button onclick="window.location.href='tristan_site_ma.html';">Retour à la page principale</button>
+                </body>
+                </html>
+            `;
+
+            // Remplacer le contenu de la page actuelle
+            document.open();
+            document.write(contenuHTML);
+            document.close();
+        }
+
+        // .....................................................
+        // EXERCICE 20
+        function exo20() {
+            const contenuHTML = `
+                <!DOCTYPE html>
+                <html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+                <head>
+                    <meta charset="UTF-8">
+                    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                    <title>Nouvelle Page</title>
+                    <style>
+                        body {
+                            margin: 0;
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                            flex-direction: column;
+                            height: 100vh;
+                            background-color: rgb(52, 52, 52);
+                            font-family: Arial, sans-serif;
+                        }
+                        .bloc {
+                            background-color: #2548a1;
+                            color: white;
+                            padding: 50px;
+                            border-radius: 10px;
+                            text-align: center;
+                            font-size: 1.5rem;
+                        }
+                    </style>
+                </head>
+                <body>
+                    <div class="bloc">
+                        <p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><munderover><mo>∑</mo><mrow><mi>n</mi><mo>=</mo><mn>0</mn></mrow><mrow><mi>+</mi><mi>∞</mi></mrow></munderover><munderover><mo>∑</mo><mrow><mi>k</mi><mo>=</mo><mi>n</mi><mo>+</mo><mn>1</mn></mrow><mrow><mi>+</mi><mi>∞</mi></mrow></munderover><mfrac><mn>1</mn><msup><mi>k</mi><mi>α</mi></msup></mfrac></mrow><annotation encoding="application/x-tex">\sum_{n=0}^{+\infty}\sum_{k=n+1}^{+\infty}\frac{1}{k^\alpha}</annotation></semantics></math></p>
+                    </div>
+                    <button onclick="window.location.href='tristan_site_ma.html';">Retour à la page principale</button>
+                </body>
+                </html>
+            `;
+
+            // Remplacer le contenu de la page actuelle
+            document.open();
+            document.write(contenuHTML);
+            document.close();
+        }
+
+        // .....................................................
+        // EXERCICE 21
+        function exo21() {
+            const contenuHTML = `
+                <!DOCTYPE html>
+                <html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+                <head>
+                    <meta charset="UTF-8">
+                    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                    <title>Nouvelle Page</title>
+                    <style>
+                        body {
+                            margin: 0;
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                            flex-direction: column;
+                            height: 100vh;
+                            background-color: rgb(52, 52, 52);
+                            font-family: Arial, sans-serif;
+                        }
+                        .bloc {
+                            background-color: #2548a1;
+                            color: white;
+                            padding: 50px;
+                            border-radius: 10px;
+                            text-align: center;
+                            font-size: 1.5rem;
+                        }
+                    </style>
+                </head>
+                <body>
+                    <div class="bloc">
+                        <p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><munderover><mo>∑</mo><mrow><mi>n</mi><mo>=</mo><mn>0</mn></mrow><mrow><mi>+</mi><mi>∞</mi></mrow></munderover><munderover><mo>∑</mo><mrow><mi>k</mi><mo>=</mo><mi>n</mi><mo>+</mo><mn>1</mn></mrow><mrow><mi>+</mi><mi>∞</mi></mrow></munderover><mfrac><msup><mrow><mo stretchy="true" form="prefix">(</mo><mi>−</mi><mn>1</mn><mo stretchy="true" form="postfix">)</mo></mrow><mi>k</mi></msup><msup><mi>k</mi><mi>α</mi></msup></mfrac></mrow><annotation encoding="application/x-tex">\sum_{n=0}^{+\infty}\sum_{k=n+1}^{+\infty}\frac{(-1)^k}{k^\alpha}</annotation></semantics></math></p>
+                    </div>
+                    <button onclick="window.location.href='tristan_site_ma.html';">Retour à la page principale</button>
+                </body>
+                </html>
+            `;
+
+            // Remplacer le contenu de la page actuelle
+            document.open();
+            document.write(contenuHTML);
+            document.close();
+        }
+
+        // .....................................................
+        // EXERCICE 22
+        function exo22() {
+            const contenuHTML = `
+                <!DOCTYPE html>
+                <html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+                <head>
+                    <meta charset="UTF-8">
+                    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                    <title>Nouvelle Page</title>
+                    <style>
+                        body {
+                            margin: 0;
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                            flex-direction: column;
+                            height: 100vh;
+                            background-color: rgb(52, 52, 52);
+                            font-family: Arial, sans-serif;
+                        }
+                        .bloc {
+                            background-color: #2548a1;
+                            color: white;
+                            padding: 50px;
+                            border-radius: 10px;
+                            text-align: center;
+                            font-size: 1.5rem;
+                        }
+                    </style>
+                </head>
+                <body>
+                    <div class="bloc">
+                        <p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><munderover><mo>∑</mo><mrow><mi>n</mi><mo>=</mo><mn>0</mn></mrow><mrow><mi>+</mi><mi>∞</mi></mrow></munderover><mo>sin</mo><mrow><mo stretchy="true" form="prefix">(</mo><mfrac><mi>π</mi><mn>2</mn></mfrac><msup><mrow><mo stretchy="true" form="prefix">(</mo><mn>2</mn><mo>+</mo><msqrt><mn>3</mn></msqrt><mo stretchy="true" form="postfix">)</mo></mrow><mi>n</mi></msup><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">\sum_{n=0}^{+\infty}\sin(\frac{\pi}{2}(2+\sqrt{3})^n)</annotation></semantics></math></p>
+                    </div>
+                    <button onclick="window.location.href='tristan_site_ma.html';">Retour à la page principale</button>
+                </body>
+                </html>
+            `;
+
+            // Remplacer le contenu de la page actuelle
+            document.open();
+            document.write(contenuHTML);
+            document.close();
+        }
+
+        // .....................................................
+        // EXERCICE 23
+        function exo23() {
+            const contenuHTML = `
+                <!DOCTYPE html>
+                <html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+                <head>
+                    <meta charset="UTF-8">
+                    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                    <title>Nouvelle Page</title>
+                    <style>
+                        body {
+                            margin: 0;
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                            flex-direction: column;
+                            height: 100vh;
+                            background-color: rgb(52, 52, 52);
+                            font-family: Arial, sans-serif;
+                        }
+                        .bloc {
+                            background-color: #2548a1;
+                            color: white;
+                            padding: 50px;
+                            border-radius: 10px;
+                            text-align: center;
+                            font-size: 1.5rem;
+                        }
+                    </style>
+                </head>
+                <body>
+                    <div class="bloc">
+                        <p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><munderover><mo>∑</mo><mrow><mi>n</mi><mo>=</mo><mn>1</mn></mrow><mrow><mi>+</mi><mi>∞</mi></mrow></munderover><mfrac><mrow><mo>sin</mo><mrow><mo stretchy="true" form="prefix">(</mo><mi>n</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><mi>n</mi></mfrac></mrow><annotation encoding="application/x-tex">\sum_{n=1}^{+\infty}\frac{\sin(n)}{n}</annotation></semantics></math></p>
+                    </div>
+                    <button onclick="window.location.href='tristan_site_ma.html';">Retour à la page principale</button>
+                </body>
+                </html>
+            `;
+
+            // Remplacer le contenu de la page actuelle
+            document.open();
+            document.write(contenuHTML);
+            document.close();
+        }
+
+        // .....................................................
+        // EXERCICE 24
+        function exo24() {
+            const contenuHTML = `
+                <!DOCTYPE html>
+                <html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+                <head>
+                    <meta charset="UTF-8">
+                    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                    <title>Nouvelle Page</title>
+                    <style>
+                        body {
+                            margin: 0;
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                            flex-direction: column;
+                            height: 100vh;
+                            background-color: rgb(52, 52, 52);
+                            font-family: Arial, sans-serif;
+                        }
+                        .bloc {
+                            background-color: #2548a1;
+                            color: white;
+                            padding: 50px;
+                            border-radius: 10px;
+                            text-align: center;
+                            font-size: 1.5rem;
+                        }
+                    </style>
+                </head>
+                <body>
+                    <div class="bloc">
+                        <p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><munderover><mo>∑</mo><mrow><mi>n</mi><mo>=</mo><mn>0</mn></mrow><mrow><mi>+</mi><mi>∞</mi></mrow></munderover><mrow><mo stretchy="true" form="prefix">(</mo><mrow><mo stretchy="true" form="prefix">(</mo><munderover><mo>∑</mo><mrow><mi>k</mi><mo>=</mo><mn>1</mn></mrow><mi>n</mi></munderover><mfrac><mn>1</mn><msqrt><mi>k</mi></msqrt></mfrac><mo stretchy="true" form="postfix">)</mo></mrow><mo>−</mo><mn>2</mn><msqrt><mi>n</mi></msqrt><mo>−</mo><mi>l</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">\sum_{n=0}^{+\infty}((\sum_{k=1}^{n}\frac{1}{\sqrt{k}})-2\sqrt{n}-l)</annotation></semantics></math></p>
+                    </div>
+                    <button onclick="window.location.href='tristan_site_ma.html';">Retour à la page principale</button>
+                </body>
+                </html>
+            `;
+
+            // Remplacer le contenu de la page actuelle
+            document.open();
+            document.write(contenuHTML);
+            document.close();
+        }
+
+        // .....................................................
+        // EXERCICE 25
+        function exo25() {
+            const contenuHTML = `
+                <!DOCTYPE html>
+                <html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+                <head>
+                    <meta charset="UTF-8">
+                    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                    <title>Nouvelle Page</title>
+                    <style>
+                        body {
+                            margin: 0;
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                            flex-direction: column;
+                            height: 100vh;
+                            background-color: rgb(52, 52, 52);
+                            font-family: Arial, sans-serif;
+                        }
+                        .bloc {
+                            background-color: #2548a1;
+                            color: white;
+                            padding: 50px;
+                            border-radius: 10px;
+                            text-align: center;
+                            font-size: 1.5rem;
+                        }
+                    </style>
+                </head>
+                <body>
+                    <div class="bloc">
+                        <p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><munderover><mo>∑</mo><mrow><mi>k</mi><mo>=</mo><mn>0</mn></mrow><mrow><mi>+</mi><mi>∞</mi></mrow></munderover><mfrac><mn>1</mn><mi>m</mi></mfrac><mrow><mo stretchy="true" form="prefix">(</mo><mfrac><msup><mrow><mo stretchy="true" form="prefix">(</mo><mi>φ</mi><mo>−</mo><mfrac><mn>1</mn><mn>2</mn></mfrac><mo stretchy="true" form="postfix">)</mo></mrow><mn>4</mn></msup><mfrac><mn>3</mn><mn>2</mn></mfrac></mfrac><msup><mn>10</mn><mn>6</mn></msup><mo>+</mo><mfrac><msup><mrow><mo stretchy="true" form="prefix">(</mo><mfrac><mn>5</mn><mn>2</mn></mfrac><mo stretchy="true" form="postfix">)</mo></mrow><mn>2</mn></msup><msup><mrow><mo stretchy="true" form="prefix">(</mo><mi>φ</mi><mo>−</mo><mfrac><mn>1</mn><mn>2</mn></mfrac><mo stretchy="true" form="postfix">)</mo></mrow><mn>2</mn></msup></mfrac><msup><mn>10</mn><mn>3</mn></msup><mo>+</mo><mfrac><msup><mrow><mo stretchy="true" form="prefix">(</mo><msup><mi>φ</mi><mn>2</mn></msup><mo>−</mo><mfrac><mn>3</mn><mn>2</mn></mfrac><mo stretchy="true" form="postfix">)</mo></mrow><mn>2</mn></msup><mfrac><mn>3</mn><mn>2</mn></mfrac></mfrac><msup><mn>10</mn><mn>2</mn></msup><mo>+</mo><msup><mn>10</mn><mn>0</mn></msup><mo stretchy="true" form="postfix">)</mo></mrow><msup><mrow><mo stretchy="true" form="prefix">(</mo><mfrac><mi>k</mi><mi>m</mi></mfrac><mo stretchy="true" form="postfix">)</mo></mrow><mn>4</mn></msup><msup><mi>e</mi><mrow><mi>−</mi><mfrac><mi>k</mi><mi>m</mi></mfrac></mrow></msup><mo>:=</mo><mi>S</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>m</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">\sum_{k=0}^{+\infty}\frac{1}{m}(\frac{(\varphi-\frac{1}{2})^4}{\frac{3}{2}}10^6+\frac{(\frac{5}{2})^2}{(\varphi-\frac{1}{2})^2}10^3+\frac{(\varphi^2-\frac{3}{2})^2}{\frac{3}{2}}10^2+10^0)(\frac{k}{m})^4e^{-\frac{k}{m}}:=S(m)</annotation></semantics></math></p>
+                    </div>
+                    <button onclick="window.location.href='tristan_site_ma.html';">Retour à la page principale</button>
+                </body>
+                </html>
+            `;
+
+            // Remplacer le contenu de la page actuelle
+            document.open();
+            document.write(contenuHTML);
+            document.close();
+        }
+    </script>
+</body>
+</html>
