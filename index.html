@@ -324,8 +324,10 @@
         function griserElements() {
           const aujourdHui = new Date();
           const mois = aujourdHui.getMonth() + 1; // Les mois commencent à 0
+          const annee = aujourdHui.getFullYear();
           const jourActuel = aujourdHui.getDate();
-    
+
+          if (annee == 2024){
           const tousLesElements = document.querySelectorAll("[id]");
           tousLesElements.forEach(element => {
             const idNumerique = parseInt(element.id.replace("i", ""), 10); // "replace" remplace ici "i" par "" et parseInt convertit en int
@@ -334,6 +336,7 @@
               element.removeAttribute("onclick");
             }
           });
+        }
         }
     
         // Appeler la fonction au chargement de la page
