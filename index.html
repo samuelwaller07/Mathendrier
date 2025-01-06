@@ -311,15 +311,15 @@
         <div class="item18" id="i18" onclick="exo18()">18</div>
         <div class="item19" id="i19" onclick="exo19()">19</div>
         <div class="item20" id="i20" onclick="exo20()">20</div>
-        <div class="item21" id="i22" onclick="exo21()">21</div>
-        <div class="item22" id="i23" onclick="exo22()">22</div>
-        <div class="item23" id="i24" onclick="exo23()">23</div>
-        <div class="item24" id="i25" onclick="exo24()">24</div>
-        <div class="item25" id="i26" onclick="exo25()">25</div>
+        <div class="item21" id="i21" onclick="exo21()">21</div>
+        <div class="item22" id="i22" onclick="exo22()">22</div>
+        <div class="item23" id="i23" onclick="exo23()">23</div>
+        <div class="item24" id="i24" onclick="exo24()">24</div>
+        <div class="item25" id="i25" onclick="exo25()">25</div>
     </div>
-    <h4 align="right" style="line-height: 0; color:white;">Exercices collectés ou créés par Samuel WALLER</h4>
+    <h4 align="right" style="margin: 0; color:white;">Exercices collectés ou créés par Samuel WALLER</h4>
     <p align="right" style="margin: 0;"><font style="color:white;" size="0">Il existe des pdf avec indications et des vidéos de correction entièrement réalisés par &copy;Samuel WALLER</font></p>
-    <p align="right"><font size="0" style="line-height: 0; margin: 0; color:orange;">contact: samuelwaller07@gmail.com</font></p>
+    <p align="right"><font size="0" style="margin: 0; color:orange;">contact: samuelwaller07@gmail.com</font></p>
     <script>   
         function griserElements() {
           const aujourdHui = new Date();
@@ -345,8 +345,10 @@
         function faireBrillerElements() {
           const aujourdHui = new Date();
           const mois = aujourdHui.getMonth() + 1; // Les mois commencent à 0
+          const annee = aujourdHui.getFullYear();
           const jourActuel = aujourdHui.getDate();
     
+          if (annee == 2024) {
           const tousLesElements = document.querySelectorAll("[id]");
           tousLesElements.forEach(element => {
             const idNumerique = parseInt(element.id.replace("i", ""), 10); // "replace" remplace ici "i" par "" et parseInt convertit en int
@@ -355,6 +357,7 @@
                 element.style.boxShadow = "0 0 15px 5px rgba(255, 215, 0, 0.7)";
             }
           });
+        }
         }
     
         // Appeler la fonction au chargement de la page
@@ -1037,7 +1040,7 @@
                 <body>
                     <div class="bloc">
                         <p>
-                            JOUR 14 : Pourquoi tant de $n$?
+                            JOUR 14 : Pourquoi tant de n?
                             <math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><munderover><mo>∑</mo><mrow><mi>n</mi><mo>=</mo><mn>0</mn></mrow><mrow><mi>+</mi><mi>∞</mi></mrow></munderover><mfrac><mrow><mi>n</mi><mi>!</mi><msup><mo>tan</mo><mi>n</mi></msup><mrow><mo stretchy="true" form="prefix">(</mo><mi>θ</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><msup><mi>n</mi><mi>n</mi></msup></mfrac></mrow><annotation encoding="application/x-tex">\sum_{n=0}^{+\infty}\frac{n!\tan^n(\theta)}{n^n}</annotation></semantics></math>
                             en fonciton de <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>θ</mi><mo>∈</mo><mo stretchy="false" form="postfix">]</mo><mo>−</mo><mfrac><mi>π</mi><mn>2</mn></mfrac><mo>,</mo><mfrac><mi>π</mi><mn>2</mn></mfrac><mo stretchy="false" form="prefix">[</mo></mrow><annotation encoding="application/x-tex">\theta\in]-\frac{\pi}{2},\frac{\pi}{2}[</annotation></semantics></math>
                         </p>
